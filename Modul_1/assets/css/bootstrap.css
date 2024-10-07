@@ -38,6 +38,20 @@
   box-sizing: border-box;
 }
 
+.jumbroton{
+  font-size: 20px;
+  padding: 60px;
+  background-color: black;
+  color: white;
+}
+
+.line{
+  margin-top: 20px;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -45,6 +59,7 @@
 }
 
 body {
+  /* padding: 20px; */
   margin: 0;
   font-family: var(--bs-font-sans-serif);
   font-size: 1rem;
@@ -3838,13 +3853,22 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none;
+  background-color: black;
+  
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 800px;
+
+  object-fit: cover;
+  object-position: center;
 }
 
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #0d6efd;
+  color: white;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -3861,6 +3885,17 @@ textarea.form-control-lg {
   pointer-events: none;
   cursor: default;
 }
+
+footer{
+  padding: 20px;
+  color: white;
+  background-color: white;
+
+  text-align: center;
+  font-weight: bold;
+}
+
+
 
 .nav-tabs {
   border-bottom: 1px solid #dee2e6;
@@ -3883,7 +3918,7 @@ textarea.form-control-lg {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: white;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -3964,6 +3999,7 @@ textarea.form-control-lg {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  color: white;
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -3976,6 +4012,7 @@ textarea.form-control-lg {
 .navbar-text {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  color: white;
 }
 
 .navbar-collapse {
@@ -4155,6 +4192,7 @@ textarea.form-control-lg {
 .navbar-expand {
   flex-wrap: nowrap;
   justify-content: flex-start;
+  color: white;
 }
 .navbar-expand .navbar-nav {
   flex-direction: row;
