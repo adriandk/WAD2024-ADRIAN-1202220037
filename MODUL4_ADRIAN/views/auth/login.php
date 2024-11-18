@@ -22,16 +22,19 @@
                     <div class="card-body">
                         <?php // TODO: Tampilkan session message
                             // 1. Cek apakah session message ada
-                            ?>
+                            if(isset($_SESSION['message']) and isset($_SESSION['color'])) {?>
                             <div class="alert alert-info alert-dismissible fade show">
                                 <i class="fas fa-info-circle me-2"></i>
                                 <?php
                                 // 2. Tampilkan session message
+                                $_SESSION['message'];
                                 // 3. Hapus session message setelah ditampilkan
+
+                                unset($_SESSION['message']);
                                 ?>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             </div>
-                        <?php // TODO: Tutup if ?>
+                        <?php } // TODO: Tutup if ?>
 
                         <form action="index.php?controller=auth&action=login" method="POST">
                             <div class="mb-4">
@@ -42,6 +45,9 @@
                                     value="<?php // TODO: Tampilkan cookie nim
                                         // 1. Cek apakah cookie nim ada
                                         // 2. Tampilkan cookie nim
+                                        if ($_COOKIE['NIM']) {
+                                            echo $_COOKIE['NIM'];
+                                        }
                                         ?>"
                                     placeholder="Masukkan NIM Anda" required>
                             </div>
@@ -53,6 +59,9 @@
                                     value="<?php // TODO: Tampilkan cookie password
                                         // 1. Cek apakah cookie password ada
                                         // 2. Tampilkan cookie password
+                                        if ($_COOKIE['password']) {
+                                            echo $_COOKIE['password'];
+                                        }
                                         ?>"
                                     placeholder="Masukkan password Anda" required>
                             </div>
@@ -62,6 +71,9 @@
                                         <?php // TODO: Tampilkan cookie remember me
                                             // 1. Cek apakah cookie remember me ada
                                             // 2. Tampilkan cookie remember me
+                                            if ($_COOKIE['remember_me']) {
+                                                echo $_COOKIE['remember_me'];
+                                            }
                                         ?>
                                     >
                                     <span class="slider"></span>

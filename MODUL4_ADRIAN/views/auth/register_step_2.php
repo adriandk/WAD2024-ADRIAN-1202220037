@@ -26,16 +26,20 @@
                     <div class="card-body">
                         <?php // TODO: Tampilkan session message
                             // 1. Cek apakah session message ada
+                            if(isset($_SESSION['message']) and isset($_SESSION['color'])) {
                             ?>
                             <div class="alert alert-info alert-dismissible fade show">
                                 <i class="fas fa-info-circle me-2"></i>
                                 <?php
                                 // 2. Tampilkan session message
+                                $_SESSION['message'];
                                 // 3. Hapus session message setelah ditampilkan
+
+                                unset($_SESSION['message']);
                                 ?>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             </div>
-                        <?php // TODO: Tutup if ?>
+                        <?php }// TODO: Tutup if ?>
 
                         <form action="index.php?controller=auth&action=register_step_2" method="POST" id="passwordForm">
                             <div class="mb-4">

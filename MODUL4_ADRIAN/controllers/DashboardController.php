@@ -19,12 +19,31 @@ class DashboardController {
             $execute = mysqli_query($this->conn, $query);
 
             if (mysqli_num_rows($execute) == 1) {
-                $dataLogin = mysqli_fetch_assoc($execute);
+                $mahasiswa = mysqli_fetch_assoc($execute);
             }
 
         } else {
             if ($_COOKIE['id'] && $_COOKIE['nim']) {
-                
+                $id = $_COOKIE['id'];
+                $nim = $_COOKIE['nim'];
+
+                $query = "SELECT * FROM mahasiswa where nim = '$nim'";
+                $execute = mysqli_query($this->conn, $query);
+                if (mysqli_num_rows($execute) == 1) {
+                    $mahasiswa = mysqli_fetch_assoc($execute);
+                    $_SESSION['login'] = true;
+                    $_SESSION['user'] = $mahasiswa;
+                    $_SESSION['message'] = "Login berhasil (melalui cookie)";
+                } else {
+                    $_SESSION['message'] = "Login gagal (melalui cookie)";
+                    header('Location: index.php?controller=auth&action=login');
+                    exit;
+                }
+
+            } else {
+                $_SESSION['message'] = "Please login first";
+                header('Location: index.php?controller=auth&action=login');
+                exit;
             }
         }
 

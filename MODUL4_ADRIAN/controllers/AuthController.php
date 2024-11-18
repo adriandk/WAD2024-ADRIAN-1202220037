@@ -33,7 +33,7 @@ class AuthController {
                     $_SESSION['id'] = $dataLogin['id'];
                     $_SESSION['message'] = "Login Berhasil";
 
-                    if (isset($input["remeber"])) {
+                    if (isset($input["remember_me"])) {
                         setcookie('id', $dataLogin['id'], time() + (86400 * 30), "/");
                         setcookie('nim', $dataLogin['nim'], time() + (86400 * 30), "/");
                     } else {
